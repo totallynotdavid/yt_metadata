@@ -1,0 +1,29 @@
+{
+  "name": "NodeJS workbench",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20-bullseye",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.wordWrap": "on",
+        "editor.tabSize": 2,
+        "git.autofetch": true,
+        "editor.lineHeight": 33,
+        "workbench.sideBar.location": "right"
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "msjsdiag.debugger-for-chrome",
+        "oderwat.indent-rainbow",
+        "redhat.vscode-yaml",
+        "wix.vscode-import-cost"
+      ]
+    }
+  },
+
+  "postCreateCommand": "pnpm install"
+}

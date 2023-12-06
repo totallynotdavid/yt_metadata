@@ -1,0 +1,7 @@
+{
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "git.autofetch": true,
+  "editor.lineHeight": 33,
+  "workbench.sideBar.location": "right",
+}

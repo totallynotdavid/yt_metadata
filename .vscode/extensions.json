@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "CoderCoder.codercoder-dark-theme", 
+    "esbenp.prettier-vscode",
+    "bradgashler.htmltagwrap",
+    "GitHub.copilot-nightly",
+    "GitHub.copilot-labs",
+    "vivaxy.vscode-conventional-commits"
+  ]
+}
