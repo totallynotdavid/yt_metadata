@@ -1,0 +1,27 @@
+{
+  "name": "yt-fetcher",
+  "version": "0.0.1",
+  "description": "A package to fetch YouTube content details, either by URL or search query.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/totallynotdavid/yt-fetcher.git"
+  },
+  "keywords": [
+    "YouTube",
+    "fetch",
+    "search",
+    "video",
+    "content",
+    "extract"
+  ],
+  "author": "David Duran <david@caefisica.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/totallynotdavid/yt-fetcher/issues"
+  },
+  "homepage": "https://github.com/totallynotdavid/yt-fetcher#readme"
+}
