@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/totallynotdavid/yt-fetcher.git"
+    "url": "git+https://github.com/totallynotdavid/yt_metadata.git"
   },
   "keywords": [
     "YouTube",
@@ -21,9 +21,9 @@
   "author": "David Duran <david@caefisica.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/totallynotdavid/yt-fetcher/issues"
+    "url": "https://github.com/totallynotdavid/yt_metadata/issues"
   },
-  "homepage": "https://github.com/totallynotdavid/yt-fetcher#readme",
+  "homepage": "https://github.com/totallynotdavid/yt_metadata#readme",
   "devDependencies": {
     "jest": "^29.7.0"
   }
