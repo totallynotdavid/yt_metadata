@@ -6,7 +6,7 @@ const { youtubeTypes } = require('./search/regex.js');
 // Definitions
 const isYoutubeLink = (link) => youtubeTypes.videos.test(link) || youtubeTypes.playlists.test(link) || youtubeTypes.channels.test(link);
 
-async function yt_fetcher(query) {
+async function yt_metadata(query) {
   try {
     if (!query || typeof query !== 'string') {
       throw new Error('Invalid query provided');
@@ -27,9 +27,9 @@ async function yt_fetcher(query) {
       return await searchYoutubeMedia(stringify_query.join('+'));
     }
   } catch (error) {
-    console.error(`Error in yt_fetcher: ${error.message}`);
+    console.error(`Error in yt_metadata: ${error.message}`);
     return null;
   }
 }
 
-module.exports = yt_fetcher;
+module.exports = yt_metadata;

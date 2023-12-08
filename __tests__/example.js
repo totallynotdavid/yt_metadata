@@ -1,4 +1,4 @@
-const yt_fetcher = require('../src/index');
+const yt_metadata = require('../src/index');
 const { extractMediaId } = require('../src/search/get_id');
 const { searchYoutubeMedia } = require('../src/search');
 
@@ -18,13 +18,13 @@ const extractMediaIdTestCases = [
   { url: 'https://example.com', expected: null },
 ];
 
-describe('yt_fetcher', () => {
+describe('yt_metadata', () => {
   ytFetcherTestCases.forEach(({ query, expected, isSearchQuery }) => {
     it(`should return ${expected} for query: ${query}`, async () => {
       if (isSearchQuery) {
         searchYoutubeMedia.mockResolvedValue([expected, 'video']);
       }
-      await expect(yt_fetcher(query)).resolves.toEqual(expected);
+      await expect(yt_metadata(query)).resolves.toEqual(expected);
     });
   });
 });
