@@ -26,5 +26,8 @@
   "homepage": "https://github.com/totallynotdavid/yt_metadata#readme",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
   }
 }
