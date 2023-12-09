@@ -12,6 +12,6 @@ jobs:
         version: 8
     - uses: actions/checkout@v2
     - name: Install dependencies
-      run: pnpm ci
+      run: pnpm i
     - name: Run Jest
       run: pnpm test
