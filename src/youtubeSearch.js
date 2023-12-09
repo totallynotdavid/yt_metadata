@@ -1,3 +1,4 @@
+require('dotenv').config()
 const youtube_api_key = process.env.YOUTUBE_API_KEY;
 
 async function searchYoutubeMedia(query) {
