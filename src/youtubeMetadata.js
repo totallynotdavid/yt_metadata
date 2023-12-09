@@ -11,10 +11,7 @@ async function fetchYoutubeMetadata(query) {
   try {
     validateQuery(query);
 
-    console.log(`Query: ${query}`)
     const queryArray = query.trim().split(/\s+/);
-    console.log(`Query Array: ${queryArray}`)
-    console.log(`Query Array Length: ${queryArray.length}`)
 
     if (isYoutubeLink(queryArray[0])) {
       return extractMediaId(queryArray[0]);
