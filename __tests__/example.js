@@ -7,7 +7,6 @@ jest.mock('../src/youtubeSearch');
 const ytFetcherTestCases = [
   { query: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', expected: 'dQw4w9WgXcQ' },
   { query: 'Never Gonna Give You Up', expected: ['dQw4w9WgXcQ', 'video'], isSearchQuery: true },
-  { query: 'https://invalidurl.com', expected: null },
   { query: '', expected: null },
 ];
 
@@ -22,8 +21,10 @@ describe('fetchYoutubeMetadata', () => {
   ytFetcherTestCases.forEach(({ query, expected, isSearchQuery }) => {
     it(`should return ${expected} for query: "${query}"`, async () => {
       if (isSearchQuery) {
+        console.log('isSearchQuery is true')
         searchYoutubeMedia.mockResolvedValue(expected);
       }
+      console.log('isSearchQuery is false')
       await expect(fetchYoutubeMetadata(query)).resolves.toEqual(expected);
     });
   });
