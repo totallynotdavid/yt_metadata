@@ -1,5 +1,10 @@
 const { youtubeTypes } = require('./youtubeRegex');
 
+/*
+  * Extracts the media ID from a YouTube URL.
+  * @param {string} link - The YouTube URL.
+  * @returns {[ string, string ]|null} - A tuple of media ID and type, or null on failure.
+*/
 function extractMediaId(link) {
   if (youtubeTypes.videos.test(link)) {
     return [ extractId(link, youtubeTypes.videos, 5), 'video'];
@@ -11,6 +16,13 @@ function extractMediaId(link) {
   return null;
 }
 
+/*
+  * Extracts the ID from the matched YouTube URL.
+  * @param {string} link - The YouTube URL.
+  * @param {RegExp} regex - The regex pattern for extracting the ID.
+  * @param {number|string} splitValue - The value to use to split the matched string.
+  * @returns {string|null} - The extracted ID, or null on failure.
+*/
 function extractId(link, regex, splitValue) {
   const match = link.match(regex);
   if (!match) return null;
