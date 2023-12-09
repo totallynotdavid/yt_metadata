@@ -28,7 +28,6 @@ async function fetchYoutubeMetadata(query, fetchType = 'fullData') {
     }
 
     if (fetchType === 'idOnly') {
-      console.log('Returning only the ID');
       return { mediaId, mediaType };
     }
 
