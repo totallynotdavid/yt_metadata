@@ -49,17 +49,17 @@ function extractMediaInfo(data, mediaType) {
 
 	const info = data.items[0].snippet;
 	const statistics = data.items[0].statistics;
-  const thumbnails = info.thumbnails;
+	const thumbnails = info.thumbnails;
 
-  let thumbnailSize = thumbnails[config.preferredThumbnailSize]
-                      ? config.preferredThumbnailSize
-                      : config.thumbnailFallbackOrder.find(size => thumbnails[size]);
+	let thumbnailSize = thumbnails[config.preferredThumbnailSize]
+		? config.preferredThumbnailSize
+		: config.thumbnailFallbackOrder.find(size => thumbnails[size]);
 
 	const result = {
-    mediaType: mediaType,
-    thumbnailUrl: thumbnails[thumbnailSize]?.url,
-    // description: info?.description, // We do not need the description as they tend to be too long
-  };
+		mediaType: mediaType,
+		thumbnailUrl: thumbnails[thumbnailSize]?.url,
+		// description: info?.description, // We do not need the description as they tend to be too long
+	};
 
 	// Add specific details based on the media type
 	switch (mediaType) {
