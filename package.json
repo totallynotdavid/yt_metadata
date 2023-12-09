@@ -2,7 +2,7 @@
   "name": "yt_metadata",
   "version": "0.0.1",
   "description": "A package to fetch YouTube content details, either by URL or search query.",
-  "main": "index.js",
+  "main": "src/youtubeMetadata.js",
   "scripts": {
     "test": "jest"
   },
