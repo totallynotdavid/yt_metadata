@@ -60,4 +60,4 @@ Fetches YouTube metadata.
 - A Promise that resolves to the fetched metadata or `null` in case of an error.
 
 ## Contributing
-Contributions to the YouTube Metadata Fetcher are welcome. Please ensure that your contributions adhere to the project coding standards and include appropriate tests.
+Contributions are welcome. Please ensure that your contributions adhere to the project coding standards and include appropriate tests.
