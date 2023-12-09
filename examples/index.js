@@ -7,8 +7,12 @@ async function main(query) {
 }
 
 async function runTest() {
-  await main('hhttps://invalidurl.com');
-  await main('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+  await main('https://www.youtube.com/watch?v=dQw4w9WgXcQ'); // this is a video (long form)
+  await main('https://youtu.be/dQw4w9WgXcQ'); // this is a video (short form)
+  await main('https://www.youtube.com/watch?v=7AiSeatxXS4&list=PLwEkAnYJ7sRY6OLAxDBhAlUvPpAi6Am6-&pp=iAQB') // this is really a video but it's in a playlist
+  await main('https://www.youtube.com/playlist?list=PLpBx-1imHuxISNflNHo0Qr4mQ8l3mqmyi') // this is a playlist
+  await main('https://www.youtube.com/channel/UC_LQrLv47K0Fd3k2MB1kBRQ') // this is a channel (old format)
+  await main('https://www.youtube.com/@CulturaSiglo21') // this is a channel (new format)
 }
 
 runTest();
