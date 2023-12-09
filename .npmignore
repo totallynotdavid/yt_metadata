@@ -1,0 +1,8 @@
+node_modules
+examples
+__tests__
+.devcontainer
+.github
+.vscode
+jest.config.js
+.nvmrc
