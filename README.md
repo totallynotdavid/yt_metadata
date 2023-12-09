@@ -101,7 +101,7 @@ You can configure the preferred thumbnail size in the `production.config.js` fil
 
 ## API Reference
 
-### `fetchYoutubeMetadata(query: string): Promise<any>`
+### `fetchYoutubeMetadata(query: string, fetchType: string): Promise<any>`
 
 Fetches YouTube metadata.
 
