@@ -5,7 +5,8 @@
   "main": "src/youtubeMetadata.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
   },
   "repository": {
     "type": "git",
