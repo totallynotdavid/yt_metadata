@@ -4,7 +4,8 @@
   "description": "A package to fetch YouTube content details, either by URL or search query.",
   "main": "src/youtubeMetadata.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
