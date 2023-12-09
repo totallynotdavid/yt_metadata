@@ -2,9 +2,10 @@
 const { searchYoutubeMedia } = require('./youtubeSearch');
 const { extractMediaId } = require('./youtubeExtractor');
 const { youtubeTypes } = require('./youtubeRegex');
+const { getYoutubeMediaInfo } = require('./youtubeDetails');
 
 /*
-  * First filter to determine if the provided query is a YouTube link.
+  * Determines if the provided query is a YouTube link.
   * @param {string} link - The query string or URL.
   * @returns {boolean} - True if it's a YouTube link, false otherwise.
 */
@@ -17,21 +18,28 @@ const isYoutubeLink = (link) => (
 /*
   * Fetches the metadata for YouTube media.
   * @param {string} query - The Youtube URL or search query.
-  * @returns {Promise<[ string, string ]|null>} - A tuple of media ID and type, or null on failure.
+  * @returns {Promise<object|null>} - Metadata of the YouTube media, or null on failure.
 */
 async function fetchYoutubeMetadata(query) {
   try {
     validateQuery(query);
-
     const queryArray = query.trim().split(/\s+/);
 
+    let mediaId, mediaType;
+
     if (isYoutubeLink(queryArray[0]) && queryArray.length === 1) {
-      // Because the query has a length of 1 and passes the isYoutubeLink test, it must be a YouTube link. We can safely extract the media ID.
-      return extractMediaId(queryArray[0]);
+      // Extracting media ID and type from URL
+      [mediaId, mediaType] = extractMediaId(queryArray[0]);
     } else {
-      // We build the query string by joining the array with a '+' to search for it using the YouTube API.
-      return await searchYoutubeMedia(queryArray.join('+'));
+      // Searching for media ID and type using the YouTube API
+      [mediaId, mediaType] = await searchYoutubeMedia(queryArray.join('+'));
     }
+
+    if (!mediaId || !mediaType) {
+      throw new Error('Unable to extract YouTube media ID and type');
+    }
+
+    return await getYoutubeMediaInfo(mediaId, mediaType);
   } catch (error) {
     console.error(`Error in fetchYoutubeMetadata: ${error.message}`);
     return null;
