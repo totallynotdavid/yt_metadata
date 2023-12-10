@@ -1,6 +1,6 @@
 {
   "name": "yt_metadata",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A package to fetch YouTube content details, either by URL or search query.",
   "main": "src/youtubeMetadata.js",
   "scripts": {

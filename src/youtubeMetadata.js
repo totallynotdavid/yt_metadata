@@ -32,7 +32,8 @@ async function fetchYoutubeMetadata(query, fetchType = 'fullData') {
 		}
 
 		// Fetch detailed information about the media if we pass the fullData flag
-		return await getYoutubeMediaInfo(mediaId, mediaType);
+		const mediaInfo = await getYoutubeMediaInfo(mediaId, mediaType);
+		return { mediaId, ...mediaInfo };
 	} catch (error) {
 		console.error(`Error in fetchYoutubeMetadata: ${error.message}`);
 		return null;
