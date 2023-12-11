@@ -16,3 +16,5 @@ jobs:
       run: pnpm i
     - name: Run Jest
       run: pnpm test
+      env:
+        YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
