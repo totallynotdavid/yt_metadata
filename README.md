@@ -1,6 +1,10 @@
+[![npm](https://img.shields.io/npm/v/yt_metadata.svg)](https://www.npmjs.com/package/yt_metadata) ![yt_metadata 0.0.4](https://img.shields.io/badge/yt_metadata-0.0.4-brightgreen.svg)
+
 # YouTube Metadata Fetcher
 
 Module to retrieve metadata of YouTube content, including videos, playlists, and channels. It allows users to fetch this information either by providing a direct YouTube URL or by searching with a query string.
+
+[![🚔 Tests](https://github.com/totallynotdavid/yt_metadata/actions/workflows/tests.yml/badge.svg)](https://github.com/totallynotdavid/yt_metadata/actions/workflows/tests.yml) [![🚓 Lint Test](https://github.com/totallynotdavid/yt_metadata/actions/workflows/linting.yml/badge.svg)](https://github.com/totallynotdavid/yt_metadata/actions/workflows/linting.yml)
 
 ## Features
 
