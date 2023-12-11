@@ -5,6 +5,7 @@ on: [ push, pull_request ]
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
     - uses: pnpm/action-setup@v2
