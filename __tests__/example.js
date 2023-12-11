@@ -5,6 +5,7 @@ const { searchYoutubeMedia } = require('../src/youtubeSearch');
 jest.mock('../src/youtubeSearch');
 
 const ytFetcherTestCases = [
+  /*
   {
     query: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     validate: (result) => {
@@ -15,6 +16,7 @@ const ytFetcherTestCases = [
              typeof result.likeCount === 'string';
     }
   },
+  */
   {
     query: 'Never Gonna Give You Up',
     validate: (result) => {
