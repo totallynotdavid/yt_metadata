@@ -5,7 +5,7 @@ on: [ push, pull_request ]
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: YOUTUBE_API_KEY
+    environment: production
 
     steps:
     - uses: pnpm/action-setup@v2
