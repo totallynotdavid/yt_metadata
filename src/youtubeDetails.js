@@ -1,5 +1,4 @@
-require('dotenv').config();
-const youtube_api_key = process.env.YOUTUBE_API_KEY; // eslint-disable-line no-undef
+const { getNextApiKey } = require('./apiKeyRotation');
 const config = require('../config/production.config');
 
 /**
@@ -31,11 +30,13 @@ async function getYoutubeMediaInfo(mediaId, mediaType) {
  * @return {string} The search URL for the YouTube API.
  */
 function buildSearchUrl(mediaId, mediaType) {
+	const apiKey = getNextApiKey();
+
 	const fields = mediaType === 'video' ? 'snippet,statistics,contentDetails' 
 		: mediaType === 'playlist' ? 'snippet' 
 			: 'snippet,statistics';
 
-	return `https://www.googleapis.com/youtube/v3/${mediaType}s?part=${fields}&id=${mediaId}&key=${youtube_api_key}`;
+	return `https://www.googleapis.com/youtube/v3/${mediaType}s?part=${fields}&id=${mediaId}&key=${apiKey}`;
 }
 
 /**

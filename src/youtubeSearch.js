@@ -1,5 +1,4 @@
-require('dotenv').config();
-const youtube_api_key = process.env.YOUTUBE_API_KEY; // eslint-disable-line no-undef
+const { getNextApiKey } = require('./apiKeyRotation');
 
 /*
   * Searches for a YouTube media using the YouTube API.
@@ -8,7 +7,8 @@ const youtube_api_key = process.env.YOUTUBE_API_KEY; // eslint-disable-line no-u
 */
 async function searchYoutubeMedia(query) {
 	try {
-		const searchURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${encodeURIComponent(query)}&key=${youtube_api_key}`;
+		const apiKey = getNextApiKey();
+		const searchURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${encodeURIComponent(query)}&key=${apiKey}`;
 		const response = await fetch(searchURL);
 		const data = await response.json();
 
